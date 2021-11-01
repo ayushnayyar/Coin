@@ -1,0 +1,64 @@
+$dark: #121212;
+$navbar-dark: #181818;
+$light-gray: #282828;
+$primary-text: #ffffff;
+$secondary-text: #b3b3b3;
+
+.Wrapper {
+  width: 100%;
+  background-color: $dark;
+}
+
+.Navbar {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  font-family: sans-serif;
+  color: $primary-text;
+  padding: 16px;
+}
+
+.Navbar__Items {
+  display: flex;
+  justify-content: center;
+}
+
+.Navbar__Items--right {
+  margin-left: auto;
+}
+
+.Navbar__Link {
+  padding-right: 8px;
+}
+
+.Navbar__Link-toggle {
+  display: none;
+}
+
+// @media only screen and (max-width: 768px) {
+//   .Navbar__Items,
+//   .Navbar {
+//     flex-direction: column;
+//   }
+
+//   .Navbar__Items {
+//     display: none;
+//   }
+
+//   .Navbar__Items--right {
+//     margin-left: 0;
+//   }
+
+//   .Navbar__Link-toggle {
+//     align-self: flex-end;
+//     display: initial;
+//     transition: all 2s ease-out;
+//     position: absolute;
+//     cursor: pointer;
+//   }
+
+//   .Navbar__ToggleShow {
+//     display: flex;
+//     transition: all 3s ease-out;
+//   }
+// }

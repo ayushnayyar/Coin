@@ -1,6 +1,7 @@
-// import logo from './logo.svg';
 import React from 'react';
 import Routes from './routes';
+
+import './common/app.scss';
 
 function App() {
   return (
