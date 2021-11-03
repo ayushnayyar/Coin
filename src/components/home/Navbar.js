@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import '../../common/home/navbar.scss';
-// import Logo from '../../assets/icons/Logo.js';
+import Avatar from '../../assets/images/man.png';
+import Plus from '../../assets/icons/Plus.js';
 import Menu from './Menu';
 
 const Navbar = () => {
@@ -21,17 +22,29 @@ const Navbar = () => {
         >
           <div className="Navbar__Link Navbar-brand">Coin</div>
 
-          <div className="Navbar__Link">Test Link 1</div>
+          {/* <div className="Navbar__Link">Test Link 1</div>
           <div className="Navbar__Link">Test Link 2</div>
-          <div className="Navbar__Link">Test Link 3</div>
+          <div className="Navbar__Link">Test Link 3</div> */}
         </nav>
         <nav
           className={`${
             isActive ? 'Navbar__ToggleShow' : null
           } Navbar__Items Navbar__Items--right`}
         >
-          <div className="Navbar__Link">Right Link 1</div>
-          <div className="Navbar__Link">Right Link 2</div>
+          <div className="Navbar__Link Navbar-button">
+            <button
+              onClick={() => {
+                console.log('Clicked');
+              }}
+            >
+              <Plus />
+              Create
+            </button>
+          </div>
+          <div className="Navbar__Link Navbar-avatar">
+            <img src={Avatar} />
+          </div>
+          {/* <div className="Navbar__Link">Right Link 2</div> */}
         </nav>
       </div>
     </div>

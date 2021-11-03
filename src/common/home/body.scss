@@ -1,0 +1,18 @@
+.Body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 24px 24px;
+}
+
+.NavSection {
+  width: 17%;
+}
+
+.FeedSection {
+  width: 55%;
+}
+
+.PeopleSection {
+  width: 23%;
+}
