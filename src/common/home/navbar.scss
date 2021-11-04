@@ -54,12 +54,13 @@
     background-color: rgba($color: $button-blue, $alpha: 1);
     border: none;
     color: $primary-text;
-    padding: 8px 16px;
+    padding: 10px 16px;
     text-align: center;
     text-decoration: none;
     font-size: 0.9rem;
-    border-radius: 0.5rem;
+    border-radius: 0.4rem;
     cursor: pointer;
+    font-weight: 600;
 
     > svg {
       margin-right: 4px;
@@ -69,6 +70,8 @@
 
 .Navbar-brand {
   font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: 600;
 }
 
 // @media only screen and (max-width: 768px) {

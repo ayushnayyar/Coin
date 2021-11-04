@@ -32,10 +32,81 @@
   padding: 2px;
   color: $primary-text;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .NavSection__ProfileCard-info-username {
   padding: 2px;
   color: $secondary-text;
   font-size: 0.8rem;
+}
+
+.NavSection__Nav {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0;
+  background-color: $light-gray;
+  border-radius: 0.75rem;
+
+  > .NavSection__Link {
+    padding: 0px;
+    border-radius: 0.75rem;
+    // border-left: 2px solid $light-gray;
+    > .NavSection__Link-box {
+      margin: 0px 24px;
+      padding: 20px 0;
+      border-bottom: 2px solid $primary-text;
+    }
+
+    &:last-child {
+      > .NavSection__Link-box {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  > .NavSection__Link-active {
+    padding: 0px;
+    // border-left: 2px solid $light-blue;
+    background-color: $button-blue;
+    border-radius: 0rem;
+
+    &:first-child {
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+    }
+
+    > .NavSection__Link-box {
+      margin: 0px 24px;
+      padding: 20px 0;
+      border-bottom: 2px solid $primary-text;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+      > .NavSection__Link-box {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.NavSection__Link-text {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: $primary-text;
+}
+
+.NavSection__Link-text-active {
+  text-decoration: none;
+  color: $primary-text;
+}
+
+.NavSection__Link-box {
+}
+
+.NavSection__Link-box {
+  padding: 12px;
 }
