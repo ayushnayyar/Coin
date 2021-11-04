@@ -33,6 +33,7 @@ const NavSection = () => {
           <div
             onClick={() => {
               setLinkActive(link.name);
+              window.history.replaceState(null, null, link.to);
             }}
             className={`${
               isLinkActive === link.name
