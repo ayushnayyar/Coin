@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 import Avatar from '../../assets/images/man.png';
@@ -6,6 +7,7 @@ import Avatar from '../../assets/images/man.png';
 import '../../common/home/nav-section.scss';
 
 const NavSection = () => {
+  let history = useHistory();
   const [isLinkActive, setLinkActive] = useState('Home');
 
   const navLinks = [
@@ -33,7 +35,8 @@ const NavSection = () => {
           <div
             onClick={() => {
               setLinkActive(link.name);
-              window.history.replaceState(null, null, link.to);
+              history.replace(link.to);
+              // window.history.replaceState(null, null, link.to);
             }}
             className={`${
               isLinkActive === link.name
@@ -54,54 +57,6 @@ const NavSection = () => {
             </div>
           </div>
         ))}
-        {/* <div className="NavSection__Link">
-          <div className="NavSection__Link-box">
-            <NavLink
-              activeClassName="NavSection__Link-text-active"
-              className="NavSection__Link-text"
-              exact
-              to="/"
-            >
-              Home
-            </NavLink>
-          </div>
-        </div>
-        <div className="NavSection__Link">
-          <div className="NavSection__Link-box">
-            <NavLink
-              activeClassName="NavSection__Link-text-active"
-              className="NavSection__Link-text"
-              exact
-              to="/"
-            >
-              People
-            </NavLink>
-          </div>
-        </div>
-        <div className="NavSection__Link">
-          <div className="NavSection__Link-box">
-            <NavLink
-              activeClassName="NavSection__Link-text-active"
-              className="NavSection__Link-text"
-              exact
-              to="/"
-            >
-              Photos
-            </NavLink>
-          </div>
-        </div>
-        <div className="NavSection__Link">
-          <div className="NavSection__Link-box">
-            <NavLink
-              activeClassName="NavSection__Link-text-active"
-              className="NavSection__Link-text"
-              exact
-              to="/"
-            >
-              Profile
-            </NavLink>
-          </div>
-        </div> */}
       </div>
     </section>
   );

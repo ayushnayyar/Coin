@@ -54,6 +54,7 @@
     // border-left: 2px solid $light-gray;
 
     &:hover {
+      transition: all 0.2s ease-in;
       background-color: #727272;
     }
 
@@ -80,6 +81,7 @@
   > .NavSection__Link-active {
     padding: 0px;
     // border-left: 2px solid $light-blue;
+    transition: all 0.1s linear;
     background-color: $button-blue;
     border-radius: 0rem;
 

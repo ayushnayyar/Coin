@@ -1,24 +1,39 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import NavSection from './NavSection';
 import FeedSection from './FeedSection';
 import PeopleSection from './PeopleSection';
+import People from '../../pages/people';
+
+import ROUTES from '../../constants/routes';
 
 import '../../common/home/body.scss';
 
 const Body = () => {
+  const { HOME, PEOPLE, PHOTOS, PROFILE } = ROUTES;
+
   return (
-    <div className="Body">
-      <div className="NavSection">
-        <NavSection />
+    <BrowserRouter>
+      <div className="Body">
+        <div className="NavSection">
+          <NavSection />
+        </div>
+
+        <div className="FeedSection">
+          <Switch>
+            <Route exact path={HOME} component={FeedSection} />
+            <Route path={PEOPLE} component={People} />
+            <Route path={PHOTOS} component={People} />
+            <Route path={PROFILE} component={People} />
+          </Switch>
+          {/* <FeedSection /> */}
+        </div>
+        <div className="PeopleSection">
+          <PeopleSection />
+        </div>
       </div>
-      <div className="FeedSection">
-        <FeedSection />
-      </div>
-      <div className="PeopleSection">
-        <PeopleSection />
-      </div>
-    </div>
+    </BrowserRouter>
   );
 };
 
