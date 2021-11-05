@@ -12,7 +12,7 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={HOME} component={withRouter(Home)} />
+        <Route path={HOME} component={withRouter(Home)} />
         <Route path={PEOPLE} component={withRouter(People)} />
         <Route path={LOGIN} component={withRouter(Home)} />
         <Route />

@@ -8,7 +8,9 @@ import '../../common/home/nav-section.scss';
 
 const NavSection = () => {
   let history = useHistory();
-  const [isLinkActive, setLinkActive] = useState('Home');
+  // let location = useLocation();
+  const [isLinkActive, setLinkActive] = useState(history.location.pathname);
+  console.log(history.location.pathname);
 
   const navLinks = [
     { name: 'Home', to: '/' },
@@ -34,12 +36,12 @@ const NavSection = () => {
         {navLinks.map((link) => (
           <div
             onClick={() => {
-              setLinkActive(link.name);
+              setLinkActive(link.to);
               history.replace(link.to);
               // window.history.replaceState(null, null, link.to);
             }}
             className={`${
-              isLinkActive === link.name
+              isLinkActive === link.to
                 ? 'NavSection__Link-active'
                 : 'NavSection__Link'
             }`}

@@ -1,0 +1,53 @@
+@import '../../constants/constants.scss';
+
+.Feed__Post {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  padding: 16px;
+  width: 100%;
+  background-color: $light-gray;
+}
+
+.Feed__Post__Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Feed__Post__Header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.FeedPost__Header-info-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: $primary-text;
+}
+
+.FeedPost__Header-info-time {
+  font-size: 0.72rem;
+  color: $secondary-text;
+}
+
+.Feed__Post__Header-photo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 12px;
+
+  > img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.Feed__Post__Text {
+  color: $primary-text;
+  font-size: 0.8rem;
+  margin-top: 16px;
+}
