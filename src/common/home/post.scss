@@ -3,9 +3,10 @@
 .Feed__Post {
   display: flex;
   flex-direction: column;
-  border-radius: 0.75rem;
-  padding: 16px;
+  border-radius: 0.5rem;
+  padding: 20px;
   width: 100%;
+  margin-bottom: 24px;
   background-color: $light-gray;
 }
 
@@ -48,6 +49,26 @@
 
 .Feed__Post__Text {
   color: $primary-text;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin-top: 16px;
+  font-weight: 300;
+}
+
+.Feed__Post__Photos {
+  margin: 16px 0;
+}
+
+.Feed__Post__Photo {
+  > img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.Feed__Post__Reactions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 16px 0;
 }

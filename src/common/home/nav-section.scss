@@ -1,11 +1,16 @@
 @import '../../constants/constants.scss';
 
+.NavSection__Card {
+  position: sticky;
+  top: 24px;
+}
+
 .NavSection__ProfileCard {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: $light-gray;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   padding: 16px 20px;
   //   box-shadow: 4px 4px 4px 0 rgba($color: $secondary-text, $alpha: 0.2);
 }
@@ -46,9 +51,10 @@
   flex-direction: column;
   margin: 24px 0;
   background-color: $light-gray;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
 
   > .NavSection__Link {
+    cursor: pointer;
     padding: 0px;
     // border-radius: 0.75rem;
     // border-left: 2px solid $light-gray;
@@ -59,8 +65,8 @@
     }
 
     &:first-child {
-      border-top-left-radius: 0.75rem;
-      border-top-right-radius: 0.75rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
     }
 
     > .NavSection__Link-box {
@@ -70,8 +76,8 @@
     }
 
     &:last-child {
-      border-bottom-left-radius: 0.75rem;
-      border-bottom-right-radius: 0.75rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
       > .NavSection__Link-box {
         border-bottom: 0;
       }
@@ -79,6 +85,7 @@
   }
 
   > .NavSection__Link-active {
+    cursor: pointer;
     padding: 0px;
     // border-left: 2px solid $light-blue;
     transition: all 0.1s linear;
@@ -86,8 +93,8 @@
     border-radius: 0rem;
 
     &:first-child {
-      border-top-left-radius: 0.75rem;
-      border-top-right-radius: 0.75rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
     }
 
     > .NavSection__Link-box {
@@ -97,8 +104,8 @@
     }
 
     &:last-child {
-      border-bottom-left-radius: 0.75rem;
-      border-bottom-right-radius: 0.75rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
       > .NavSection__Link-box {
         border-bottom: 0;
       }
