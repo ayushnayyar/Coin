@@ -1,7 +1,7 @@
 import React from 'react';
 
 const People = () => {
-  return <div>From People Page</div>;
+  return <div style={{ color: '#ffffff' }}>No People Added.</div>;
 };
 
 export default People;

@@ -1,0 +1,12 @@
+@import '../../constants/constants.scss';
+
+.PeopleSection__Wrapper {
+  position: sticky;
+  top: 24px;
+  padding-right: 24px;
+}
+
+.PeopleSection__Requests {
+  color: $primary-text;
+  font-size: 0.9rem;
+}

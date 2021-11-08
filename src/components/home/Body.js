@@ -5,6 +5,8 @@ import NavSection from './NavSection';
 import FeedSection from './FeedSection';
 import PeopleSection from './PeopleSection';
 import People from '../../pages/people';
+import Photos from '../../pages/photos';
+import Profile from '../../pages/profile';
 
 import ROUTES from '../../constants/routes';
 
@@ -24,8 +26,8 @@ const Body = () => {
           <Switch>
             <Route exact path={HOME} component={FeedSection} />
             <Route path={PEOPLE} component={People} />
-            <Route path={PHOTOS} component={People} />
-            <Route path={PROFILE} component={People} />
+            <Route path={PHOTOS} component={Photos} />
+            <Route path={PROFILE} component={Profile} />
           </Switch>
           {/* <FeedSection /> */}
         </div>

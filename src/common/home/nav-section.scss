@@ -1,6 +1,7 @@
 @import '../../constants/constants.scss';
 
 .NavSection__Card {
+  padding-left: 24px;
   position: sticky;
   top: 24px;
 }
@@ -61,7 +62,7 @@
 
     &:hover {
       transition: all 0.2s ease-in;
-      background-color: #727272;
+      background-color: #565656;
     }
 
     &:first-child {
