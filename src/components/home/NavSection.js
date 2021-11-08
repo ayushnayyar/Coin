@@ -3,6 +3,10 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 import Avatar from '../../assets/images/man.png';
+import Home from '../../assets/icons/Home';
+import People from '../../assets/icons/People';
+import Profile from '../../assets/icons/Profile';
+import Photos from '../../assets/icons/Photos';
 
 import '../../common/home/nav-section.scss';
 
@@ -13,10 +17,10 @@ const NavSection = () => {
   console.log(history.location.pathname);
 
   const navLinks = [
-    { name: 'Home', to: '/' },
-    { name: 'People', to: '/people' },
-    { name: 'Photos', to: '/photos' },
-    { name: 'Profile', to: '/profile' },
+    { name: 'Home', to: '/', icon: <Home /> },
+    { name: 'People', to: '/people', icon: <People /> },
+    { name: 'Photos', to: '/photos', icon: <Photos /> },
+    { name: 'Profile', to: '/profile', icon: <Profile /> },
   ];
   return (
     <section className="NavSection__Card">
@@ -54,7 +58,11 @@ const NavSection = () => {
                 exact
                 to={link.to}
               >
-                {link.name}
+                <div className="NavSection__Link-text-align">
+                  {link.icon}
+                  <div className="NavSection__Link-text-space"></div>
+                  {link.name}
+                </div>
               </NavLink>
             </div>
           </div>
