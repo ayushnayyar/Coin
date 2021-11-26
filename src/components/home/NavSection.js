@@ -14,7 +14,6 @@ const NavSection = () => {
   let history = useHistory();
   // let location = useLocation();
   const [isLinkActive, setLinkActive] = useState(history.location.pathname);
-  console.log(history.location.pathname);
 
   const navLinks = [
     { name: 'Home', to: '/', icon: <Home /> },
