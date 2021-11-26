@@ -1,14 +1,16 @@
 import React from 'react';
 
 import Post from './Post';
+import SectionHeading from '../SectionHeading';
+import CreatePost from './CreatePost';
 
 import '../../common/home/feed.scss';
-import SectionHeading from '../SectionHeading';
 
 const FeedSection = () => {
   return (
     <section className="Feed">
       <SectionHeading heading="Home" />
+      <CreatePost />
       <Post
         author="Ayush Nayyar"
         time="12 hours ago"

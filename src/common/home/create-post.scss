@@ -1,0 +1,66 @@
+@import '../../constants/constants.scss';
+
+.Create__Post {
+  padding: 8px;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 0.5rem;
+  margin-bottom: 24px;
+  background-color: $light-gray;
+}
+
+.Create__Post__Logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 8px;
+
+  > img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.Create__Post__TextField {
+  flex-grow: 3;
+
+  > textarea {
+    font-family: $font-family;
+    resize: none;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.9rem;
+    caret-color: $primary-text;
+    background-color: $light-gray;
+    color: $secondary-text;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+}
+
+.Create__Post__Button {
+  > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: rgba($color: $button-blue, $alpha: 1);
+    border: none;
+    color: $primary-text;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: 600;
+
+    > svg {
+      margin-right: 4px;
+    }
+  }
+}
