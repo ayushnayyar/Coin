@@ -31,6 +31,8 @@ const CreatePost = () => {
     event.preventDefault();
 
     dispatch(createPost(postData));
+
+    setPostData({ ...postData, description: '' });
   };
 
   return (
