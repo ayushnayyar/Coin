@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import NavSection from './NavSection';
 import FeedSection from './FeedSection';
@@ -15,10 +14,6 @@ import '../../common/home/body.scss';
 
 const Body = () => {
   const { HOME, PEOPLE, PHOTOS, PROFILE } = ROUTES;
-
-  const posts = useSelector((state) => state.posts);
-
-  console.log(posts);
 
   return (
     <BrowserRouter>
