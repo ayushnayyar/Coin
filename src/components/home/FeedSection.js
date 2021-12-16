@@ -9,7 +9,6 @@ import '../../common/home/feed.scss';
 
 const FeedSection = () => {
   const posts = useSelector((state) => state.posts);
-
   console.log(posts);
 
   return (
@@ -20,6 +19,7 @@ const FeedSection = () => {
         return (
           <Post
             key={post._id}
+            postId={post._id}
             author={post.creator}
             postText={post.description}
             time="12 hours ago"
