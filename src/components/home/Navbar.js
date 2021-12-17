@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+import PropTypes from 'react';
 
 import '../../common/home/navbar.scss';
 import Avatar from '../../assets/images/man.png';
 import Plus from '../../assets/icons/Plus.js';
 import Menu from './Menu';
 
-const Navbar = () => {
+const Navbar = ({ logout }) => {
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
     setActive(!isActive);
   };
+
   return (
     <div className="Wrapper">
       <div className="Navbar">
@@ -41,7 +43,7 @@ const Navbar = () => {
               Create
             </button>
           </div>
-          <div className="Navbar__Link Navbar-avatar">
+          <div onClick={() => logout()} className="Navbar__Link Navbar-avatar">
             <img src={Avatar} />
           </div>
           {/* <div className="Navbar__Link">Right Link 2</div> */}
@@ -49,6 +51,10 @@ const Navbar = () => {
       </div>
     </div>
   );
+};
+
+Navbar.propTypes = {
+  logout: PropTypes.function,
 };
 
 export default Navbar;

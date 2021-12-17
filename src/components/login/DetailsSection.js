@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import GoogleLogin from 'react-google-login';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 
 import { signIn, signOut } from '../../actions/auth';
 
 // import Google from '../../assets/icons/Google';
 
 import '../../common/login/details-section.scss';
-// import { useHistory } from 'react-router';
 
 const DetailsSection = () => {
   // const [signedIn, setSignedIn] = useState(false);
   const [login, setLogin] = useState(false);
+  const dispatch = useDispatch();
   // const [auth, setAuth] = useState(null);
 
-  // const history = useHistory();
+  const history = useHistory();
 
   // const onAuthChange = (isSignedIn) => {
   //   if (isSignedIn) {
@@ -31,20 +32,20 @@ const DetailsSection = () => {
   //   }
   // };
 
-  const handleLogin = async (googleData) => {
-    const res = await fetch('/api/v1/auth/google', {
-      method: 'POST',
-      body: JSON.stringify({
-        token: googleData.tokenId,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data = await res.json();
-    console.log(data);
-    // store returned user somehow
-  };
+  // const handleLogin = async (googleData) => {
+  //   const res = await fetch('/api/v1/auth/google', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       token: googleData.tokenId,
+  //     }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  //   const data = await res.json();
+  //   console.log(data);
+  //   // store returned user somehow
+  // };
 
   // const onSignInClick = () => {
   //   auth.signIn();
@@ -71,6 +72,24 @@ const DetailsSection = () => {
   //   };
   // });
 
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: 'AUTH', data: { result, token } });
+
+      history.push('/');
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const googleFailure = (error) => {
+    console.log(error);
+    console.log('Google Sign In Failed');
+  };
+
   return (
     <div className="Details__Section">
       <div className="Details__Section__Heading">Let&apos;s get started.</div>
@@ -90,9 +109,9 @@ const DetailsSection = () => {
         <GoogleLogin
           clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           buttonText="Log in with Google"
-          onSuccess={handleLogin}
-          onFailure={handleLogin}
-          cookiePolicy={'single_host_origin'}
+          onSuccess={googleSuccess}
+          onFailure={googleFailure}
+          cookiePolicy="single_host_origin"
         />
       </div>
       <div className="Details__Section__Seperator">
