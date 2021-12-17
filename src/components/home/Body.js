@@ -14,6 +14,7 @@ import '../../common/home/body.scss';
 
 const Body = () => {
   const { HOME, PEOPLE, PHOTOS, PROFILE } = ROUTES;
+  // eslint-disable-next-line no-unused-vars
 
   return (
     <BrowserRouter>
