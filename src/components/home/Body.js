@@ -5,7 +5,7 @@ import NavSection from './NavSection';
 import FeedSection from './FeedSection';
 import PeopleSection from './PeopleSection';
 import People from '../../pages/people';
-import Photos from '../../pages/photos';
+import Rewards from '../../pages/rewards';
 import Profile from '../../pages/profile';
 
 import ROUTES from '../../constants/routes';
@@ -13,7 +13,7 @@ import ROUTES from '../../constants/routes';
 import '../../common/home/body.scss';
 
 const Body = () => {
-  const { HOME, PEOPLE, PHOTOS, PROFILE } = ROUTES;
+  const { HOME, PEOPLE, REWARDS, PROFILE } = ROUTES;
   // eslint-disable-next-line no-unused-vars
 
   return (
@@ -27,7 +27,7 @@ const Body = () => {
           <Switch>
             <Route exact path={HOME} component={FeedSection} />
             <Route path={PEOPLE} component={People} />
-            <Route path={PHOTOS} component={Photos} />
+            <Route path={REWARDS} component={Rewards} />
             <Route path={PROFILE} component={Profile} />
           </Switch>
           {/* <FeedSection /> */}

@@ -18,9 +18,10 @@ const NavSection = () => {
   const navLinks = [
     { name: 'Home', to: '/', icon: <Home /> },
     { name: 'People', to: '/people', icon: <People /> },
-    { name: 'Photos', to: '/photos', icon: <Photos /> },
+    { name: 'Rewards', to: '/rewards', icon: <Photos /> },
     { name: 'Profile', to: '/profile', icon: <Profile /> },
   ];
+
   return (
     <section className="NavSection__Card">
       <div className="NavSection__ProfileCard">

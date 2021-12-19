@@ -8,12 +8,12 @@ import { createPost } from '../../actions/posts';
 import '../../common/home/create-post.scss';
 
 const CreatePost = () => {
+  const user = JSON.parse(localStorage.getItem('profile'));
   const dispatch = useDispatch();
 
   const [rows, setRows] = useState(1);
   // const [postText, setPostText] = useState('');
   const [postData, setPostData] = useState({
-    creator: 'Ayush Nayyar',
     description: '',
     tags: '',
     selectedFile: '',
@@ -30,10 +30,14 @@ const CreatePost = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(createPost(postData));
+    dispatch(createPost({ ...postData, name: user?.result?.name }));
 
     setPostData({ ...postData, description: '' });
   };
+
+  if (!user?.result?.name) {
+    return <h3>Please sign in to post.</h3>;
+  }
 
   return (
     <div className="Create__Post">

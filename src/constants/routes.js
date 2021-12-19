@@ -2,8 +2,8 @@ const ROUTES = {
   HOME: '/',
   LOGIN: '/login',
   PEOPLE: '/people',
-  PHOTOS: '/photos',
   PROFILE: '/profile',
+  REWARDS: '/rewards',
 };
 
 export default ROUTES;

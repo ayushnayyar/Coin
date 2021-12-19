@@ -14,8 +14,34 @@ import Bin from '../../assets/icons/Bin';
 
 import '../../common/home/post.scss';
 
-const Post = ({ postId, postText, author, time }) => {
+const Post = ({ post }) => {
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('profile'));
+
+  const Likes = () => {
+    if (post.likes.length > 0) {
+      return post.likes.find(
+        (like) => like === (user?.result?.googleId || user?.result?._id)
+      ) ? (
+        <React.Fragment>
+          <Like />
+          &nbsp;<React.Fragment>{post.likes.length}</React.Fragment>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <Like />
+          &nbsp;{post.likes.length}
+        </React.Fragment>
+      );
+    }
+
+    return (
+      <React.Fragment>
+        <Like />
+        &nbsp;0
+      </React.Fragment>
+    );
+  };
 
   return (
     <div className="Feed__Post">
@@ -25,20 +51,20 @@ const Post = ({ postId, postText, author, time }) => {
             <img src={Avatar} />
           </div>
           <div className="Feed__Post__Header-info">
-            <div className="FeedPost__Header-info-name">{author}</div>
-            <div className="FeedPost__Header-info-time">{time}</div>
+            <div className="FeedPost__Header-info-name">{post.name}</div>
+            <div className="FeedPost__Header-info-time">{post.time}</div>
           </div>
         </div>
         <div className="Feed__Post__Right">
           <div
-            onClick={() => dispatch(deletePost(postId))}
+            onClick={() => dispatch(deletePost(post._id))}
             className="Feed__Post__Delete"
           >
             <Bin />
           </div>
         </div>
       </div>
-      <div className="Feed__Post__Text">{postText}</div>
+      <div className="Feed__Post__Text">{post.description}</div>
       <div className="Feed__Post__Photos">
         <div className="Feed__Post__Photo">
           <img src={Laptop} />
@@ -46,11 +72,10 @@ const Post = ({ postId, postText, author, time }) => {
       </div>
       <div className="Feed__Post__Reactions">
         <div
-          onClick={() => dispatch(likePost(postId))}
+          onClick={() => dispatch(likePost(post._id))}
           className="Feed__Post__Reaction"
         >
-          <Like />
-          Like
+          <Likes />
         </div>
         <div className="Feed__Post__Reaction">
           <Comment />
@@ -66,10 +91,7 @@ const Post = ({ postId, postText, author, time }) => {
 };
 
 Post.propTypes = {
-  postId: PropTypes.string.isRequired,
-  postText: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  post: PropTypes.object,
 };
 
 export default Post;

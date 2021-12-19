@@ -1,17 +1,46 @@
-import React, { useState } from 'react';
-import PropTypes from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
+import decode from 'jwt-decode';
 
 import '../../common/home/navbar.scss';
+import { LOGOUT } from '../../constants/actionTypes';
 import Avatar from '../../assets/images/man.png';
 import Plus from '../../assets/icons/Plus.js';
 import Menu from './Menu';
 
-const Navbar = ({ logout }) => {
+const Navbar = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const [isActive, setActive] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
 
   const toggleClass = () => {
     setActive(!isActive);
   };
+
+  const logout = () => {
+    dispatch({ type: LOGOUT });
+
+    history.push('/login');
+
+    localStorage.clear();
+  };
+
+  useEffect(() => {
+    const token = user?.token;
+
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+      }
+    }
+
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [location]);
 
   return (
     <div className="Wrapper">
@@ -51,10 +80,6 @@ const Navbar = ({ logout }) => {
       </div>
     </div>
   );
-};
-
-Navbar.propTypes = {
-  logout: PropTypes.function,
 };
 
 export default Navbar;
