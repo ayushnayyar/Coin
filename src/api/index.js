@@ -29,5 +29,14 @@ export const signIn = (formData) => API.post('/user/signin', formData);
 
 export const signUp = (formData) => API.post('/user/signup', formData);
 
-export const addFriend = (id, friendId) =>
-  API.patch(`/user/${id}/addFriend`, friendId);
+export const getFriendRequests = (id) =>
+  API.post(`/user/${id}/getfriendrequests`);
+
+export const sendFriendRequest = (id, friendId) =>
+  API.patch(`/user/${id}/sendfriendrequest`, friendId);
+
+export const acceptFriendRequest = (id, friendId) =>
+  API.patch(`/user/${id}/acceptfriendrequest`, friendId);
+
+export const declineFriendRequest = (id, friendId) =>
+  API.patch(`/user/${id}/declinefriendrequest`, friendId);

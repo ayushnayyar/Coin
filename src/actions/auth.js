@@ -1,4 +1,4 @@
-import { AUTH, FRIEND_REQUEST } from '../constants/actionTypes';
+import { AUTH } from '../constants/actionTypes';
 import * as api from '../api';
 
 export const signIn = (formData, history) => async (dispatch) => {
@@ -26,25 +26,3 @@ export const signUp = (formData, history) => async (dispatch) => {
     console.log(error.message);
   }
 };
-
-export const addFriend = (id, friendId) => async (dispatch) => {
-  try {
-    const { data } = await api.addFriend(id, friendId);
-
-    dispatch({ type: FRIEND_REQUEST, data });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-// export const signIn = () => {
-//   return {
-//     type: 'SIGN_IN',
-//   };
-// };
-
-// export const signOut = () => {
-//   return {
-//     type: 'SIGN_OUT',
-//   };
-// };
