@@ -2,9 +2,9 @@
 
 .FollowRequest__Card {
   background-color: $light-gray;
-  border-radius: 0.5rem;
+  border-radius: $border-radius;
   margin-top: 16px;
-  padding: 8px 12px 8px 12px;
+  padding: 8px;
 }
 
 .FollowRequest__Content {
@@ -39,9 +39,9 @@
   cursor: pointer;
 
   > .FollowRequest__Buttons-accept {
-    padding: 12px 24px;
-    margin: 8px;
-    border-radius: 0.5rem;
+    padding: 8px 12px;
+    margin: 4px;
+    border-radius: $border-radius;
     background-color: $button-blue;
 
     &:hover {
@@ -51,9 +51,9 @@
   }
 
   > .FollowRequest__Buttons-decline {
-    padding: 12px 24px;
-    margin: 8px;
-    border-radius: 0.5rem;
+    padding: 8px 12px;
+    margin: 4px;
+    border-radius: $border-radius;
     background-color: $darker-gray;
 
     &:hover {

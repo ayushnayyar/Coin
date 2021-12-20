@@ -33,7 +33,9 @@ const PeopleSection = () => {
                   key={friendRequest.id}
                   name={friendRequest.name}
                   profilePicture={Avatar}
-                  id={user.result?._id}
+                  id={
+                    user.result?._id ? user.result?._id : user.result?.googleId
+                  }
                   friendId={friendRequest.id}
                 />
               );

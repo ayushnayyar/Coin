@@ -2,6 +2,7 @@
 
 .Wrapper {
   background-color: $navbar-dark;
+  padding: 0 7.5%;
 }
 
 .Navbar {
@@ -58,7 +59,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 0.9rem;
-    border-radius: 0.4rem;
+    border-radius: $border-radius;
     cursor: pointer;
     font-weight: 600;
 

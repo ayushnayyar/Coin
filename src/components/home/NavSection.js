@@ -6,7 +6,7 @@ import Avatar from '../../assets/images/man.png';
 import Home from '../../assets/icons/Home';
 import People from '../../assets/icons/People';
 import Profile from '../../assets/icons/Profile';
-import Photos from '../../assets/icons/Photos';
+import Photos from '../../assets/icons/Rewards';
 
 import '../../common/home/nav-section.scss';
 
@@ -58,10 +58,13 @@ const NavSection = () => {
                 exact
                 to={link.to}
               >
-                <div className="NavSection__Link-text-align">
-                  {link.icon}
-                  <div className="NavSection__Link-text-space"></div>
-                  {link.name}
+                <div className="NavSection__Link-inner">
+                  <div className="NavSection__Link-icon">
+                    <span className="NavSection__Link-icon-inner">
+                      {link.icon}
+                    </span>
+                  </div>
+                  <div className="NavSection__Link-name">{link.name}</div>
                 </div>
               </NavLink>
             </div>
