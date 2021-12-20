@@ -8,11 +8,8 @@ const authReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case AUTH:
     case SEND_FRIEND_REQUEST:
-      localStorage.setItem(
-        'profile',
-        JSON.stringify({ ...action?.payload.data })
-      );
-      return { ...state, authData: action?.payload.data };
+      localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
+      return { ...state, authData: action?.data };
 
     case LOGOUT:
       localStorage.clear();

@@ -43,6 +43,10 @@ const Post = ({ post }) => {
     );
   };
 
+  const deleteCurrentPost = () => {
+    dispatch(deletePost(post._id));
+  };
+
   return (
     <div className="Feed__Post">
       <div className="Feed__Post__Header">
@@ -56,10 +60,7 @@ const Post = ({ post }) => {
           </div>
         </div>
         <div className="Feed__Post__Right">
-          <div
-            onClick={() => dispatch(deletePost(post._id))}
-            className="Feed__Post__Delete"
-          >
+          <div onClick={deleteCurrentPost} className="Feed__Post__Delete">
             <Bin />
           </div>
         </div>
