@@ -1,9 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 import '../../common/home/follow-request.scss';
+import {
+  acceptFriendRequest,
+  declineFriendRequest,
+} from '../../actions/requests';
 
-const FollowRequest = ({ name, profilePicture }) => {
+const FollowRequest = ({ name, profilePicture, id, friendId }) => {
+  const dispatch = useDispatch();
+
+  const acceptRequest = () => {
+    dispatch(acceptFriendRequest(id, friendId));
+  };
+
+  const declineRequest = () => {
+    dispatch(declineFriendRequest(id, friendId));
+  };
+
   return (
     <div className="FollowRequest__Card">
       <div className="FollowRequest__Content">
@@ -16,8 +31,15 @@ const FollowRequest = ({ name, profilePicture }) => {
         </div>
       </div>
       <div className="FollowRequest__Buttons">
-        <div className="FollowRequest__Buttons-accept">Accept</div>
-        <div className="FollowRequest__Buttons-decline">Decline</div>
+        <div onClick={acceptRequest} className="FollowRequest__Buttons-accept">
+          Accept
+        </div>
+        <div
+          onClick={declineRequest}
+          className="FollowRequest__Buttons-decline"
+        >
+          Decline
+        </div>
       </div>
     </div>
   );
@@ -25,7 +47,9 @@ const FollowRequest = ({ name, profilePicture }) => {
 
 FollowRequest.propTypes = {
   name: PropTypes.string.isRequired,
-  profilePicture: PropTypes.string,
+  profilePicture: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  friendId: PropTypes.string.isRequired,
 };
 
 export default FollowRequest;

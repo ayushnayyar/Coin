@@ -1,4 +1,4 @@
-import { AUTH, LOGOUT } from '../constants/actionTypes';
+import { SEND_FRIEND_REQUEST, AUTH, LOGOUT } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
   authData: null,
@@ -7,6 +7,7 @@ const INITIAL_STATE = {
 const authReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case AUTH:
+    case SEND_FRIEND_REQUEST:
       localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
       return { ...state, authData: action?.data };
 

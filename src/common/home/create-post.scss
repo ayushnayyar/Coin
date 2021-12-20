@@ -1,12 +1,12 @@
 @import '../../constants/constants.scss';
 
 .Create__Post {
-  padding: 8px;
+  padding: 16px;
   display: flex;
   justify-content: stretch;
   align-items: center;
   flex-direction: row;
-  border-radius: 0.5rem;
+  border-radius: $border-radius;
   margin-bottom: 24px;
   background-color: $light-gray;
 }
@@ -60,7 +60,7 @@
       text-align: center;
       text-decoration: none;
       font-size: 0.9rem;
-      border-radius: 0.4rem;
+      border-radius: $border-radius;
       cursor: pointer;
       font-weight: 600;
 

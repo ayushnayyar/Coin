@@ -3,10 +3,12 @@
 .Feed__Post {
   display: flex;
   flex-direction: column;
-  border-radius: 0.5rem;
+  border-radius: $border-radius;
   width: 100%;
   margin-bottom: 24px;
   background-color: $light-gray;
+  border-top: 0.15rem solid $primary-text;
+  border-bottom: 0.15rem solid $primary-text;
 }
 
 .Feed__Post__Header {
@@ -65,12 +67,13 @@
 }
 
 .Feed__Post__Photos {
-  margin: 16px 0 0 0;
+  margin: 16px 16px 0 16px;
 }
 
 .Feed__Post__Photo {
   > img {
     max-width: 100%;
+    border-radius: $border-radius;
     height: auto;
   }
 }
@@ -97,7 +100,7 @@
   flex: 1;
   width: 33.3%;
   padding: 8px 0px;
-  border-radius: 0.2rem;
+  border-radius: $border-radius;
 
   &:hover {
     background-color: $darker-gray;

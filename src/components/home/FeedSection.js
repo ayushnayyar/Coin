@@ -16,15 +16,7 @@ const FeedSection = () => {
       <SectionHeading heading="Home" />
       <CreatePost />
       {posts.map((post) => {
-        return (
-          <Post
-            key={post._id}
-            postId={post._id}
-            author={post.creator}
-            postText={post.description}
-            time="12 hours ago"
-          />
-        );
+        return <Post key={post._id} post={post} />;
       })}
     </section>
   );
