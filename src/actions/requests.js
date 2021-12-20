@@ -39,8 +39,9 @@ export const acceptFriendRequest = (id, friendId) => async (dispatch) => {
 export const declineFriendRequest = (id, friendId) => async (dispatch) => {
   try {
     const { data } = await api.declineFriendRequest(id, friendId);
+    const request = { name: data.name, id: friendId };
 
-    dispatch({ type: DECLINE_FRIEND_REQUEST, data });
+    dispatch({ type: DECLINE_FRIEND_REQUEST, payload: request });
   } catch (error) {
     console.log(error.message);
   }
