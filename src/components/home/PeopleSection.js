@@ -23,7 +23,9 @@ const PeopleSection = () => {
     <div className="PeopleSection__Wrapper">
       <div className="PeopleSection__Requests">
         <div className="PeopleSection__Requests-heading">
-          <div className="PeopleSection__Requests-heading-text">Requests</div>
+          <div className="PeopleSection__Requests-heading-text">
+            Follow Requests
+          </div>
         </div>
         <div className="PeopleSection__Request">
           {requests.length > 0 ? (
@@ -41,7 +43,9 @@ const PeopleSection = () => {
               );
             })
           ) : (
-            <React.Fragment>No Requests.</React.Fragment>
+            <div className="PeopleSection__Requests-empty">
+              Your follow requests will show up here.
+            </div>
           )}
         </div>
       </div>
