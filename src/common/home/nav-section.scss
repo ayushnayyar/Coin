@@ -82,13 +82,18 @@
 
   > .NavSection__Link-active {
     cursor: pointer;
-    border: 0.15rem solid $primary-text;
+    color: $dark;
+    border: 0.15rem solid $dark;
     margin: 8px 0;
     padding: 0px;
     // border-left: 2px solid $light-blue;
     transition: all 0.1s linear;
-    background-color: $button-blue;
+    background-color: $primary-text;
     border-radius: $border-radius;
+
+    .NavSection__Link-text {
+      color: $dark;
+    }
 
     > .NavSection__Link-box {
       margin: 0px 0px;

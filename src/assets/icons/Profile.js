@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'react';
 
-const Profile = () => {
+const Profile = ({ color }) => {
   return (
     <svg
       version="1.1"
@@ -11,7 +12,7 @@ const Profile = () => {
       height="22px"
       viewBox="0 0 45.532 45.532"
       xmlSpace="preserve"
-      fill="#ffffff"
+      fill={color}
     >
       <g>
         <path
@@ -24,6 +25,10 @@ const Profile = () => {
       </g>
     </svg>
   );
+};
+
+Profile.propTypes = {
+  color: PropTypes.string,
 };
 
 export default Profile;

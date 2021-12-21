@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'react';
 
-const Home = () => {
+const Home = ({ color }) => {
   return (
     <svg
-      fill="#ffffff"
+      fill={color}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 30 30"
       width="22px"
@@ -14,6 +15,10 @@ const Home = () => {
       <path d="M5,12v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V12H5z M22,23h-4v-8h4V23z" />
     </svg>
   );
+};
+
+Home.propTypes = {
+  color: PropTypes.string,
 };
 
 export default Home;

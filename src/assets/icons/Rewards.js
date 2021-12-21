@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'react';
 
-const Photos = () => {
+const Rewards = ({ color }) => {
   return (
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      fill="#ffffff"
+      fill={color}
       width="22px"
       height="22px"
       x="0px"
@@ -20,4 +21,8 @@ const Photos = () => {
   );
 };
 
-export default Photos;
+Rewards.propTypes = {
+  color: PropTypes.string,
+};
+
+export default Rewards;
