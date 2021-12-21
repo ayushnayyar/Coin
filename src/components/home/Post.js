@@ -24,7 +24,7 @@ const Post = ({ post }) => {
         (like) => like === (user?.result?.googleId || user?.result?._id)
       ) ? (
         <React.Fragment>
-          <Like />
+          <Like color={post.likes.length > 0 ? '#e72f2f' : '#282828'} />
           &nbsp;<React.Fragment>{post.likes.length}</React.Fragment>
         </React.Fragment>
       ) : (
@@ -37,7 +37,7 @@ const Post = ({ post }) => {
 
     return (
       <React.Fragment>
-        <Like />
+        <Like color={post.likes.length > 0 ? '#e72f2f' : '#282828'} />
         &nbsp;0
       </React.Fragment>
     );

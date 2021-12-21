@@ -1,6 +1,8 @@
 @import '../../constants/constants.scss';
 
 .Wrapper {
+  position: sticky;
+  top: 0;
   background-color: $navbar-dark;
   padding: 0 7.5%;
 }
