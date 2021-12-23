@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'react';
+import PropTypes from 'prop-types';
 
-const Heart = ({ color }) => {
+const Like = ({ color }) => {
   return (
     <svg
       width="20"
@@ -19,8 +19,8 @@ const Heart = ({ color }) => {
   );
 };
 
-Heart.propTypes = {
+Like.propTypes = {
   color: PropTypes.string,
 };
 
-export default Heart;
+export default Like;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const People = () => {
-  return <div style={{ color: '#ffffff' }}>No People Added.</div>;
+  return <div className="People"></div>;
 };
 
 export default People;

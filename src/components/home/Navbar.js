@@ -51,7 +51,12 @@ const Navbar = () => {
         <nav
           className={`${isActive ? 'Navbar__ToggleShow' : null} Navbar__Items`}
         >
-          <div className="Navbar__Link Navbar-brand">Coin</div>
+          <div
+            onClick={() => history.push('/')}
+            className="Navbar__Link Navbar-brand"
+          >
+            Coin
+          </div>
 
           {/* <div className="Navbar__Link">Test Link 1</div>
           <div className="Navbar__Link">Test Link 2</div>

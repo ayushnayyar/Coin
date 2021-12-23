@@ -1,14 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import Post from '../../components/home/Post';
 
 const Posts = () => {
-  const posts = useSelector((state) => state.posts);
+  const user = JSON.parse(localStorage.getItem('profile'));
+  console.log(user);
 
   return (
     <div className="ProfileSection__Posts">
-      {posts.map((post) => {
+      {user?.result.posts.map((post) => {
+        console.log(post);
         return <Post key={post._id} post={post} />;
       })}
     </div>
