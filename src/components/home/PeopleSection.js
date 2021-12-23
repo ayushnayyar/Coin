@@ -15,7 +15,7 @@ const PeopleSection = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
 
   useEffect(() => {
-    dispatch(getFriendRequests(user.result._id));
+    dispatch(getFriendRequests(user?.result._id));
   }, []);
 
   console.log(user);

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const People = () => {
+const People = ({ color }) => {
   return (
     <svg
       version="1.1"
@@ -10,7 +11,7 @@ const People = () => {
       height="22px"
       x="0px"
       y="0px"
-      fill="#ffffff"
+      fill={color}
       viewBox="0 0 122.88 91.99"
       xmlSpace="preserve"
     >
@@ -19,6 +20,10 @@ const People = () => {
       </g>
     </svg>
   );
+};
+
+People.propTypes = {
+  color: PropTypes.string,
 };
 
 export default People;

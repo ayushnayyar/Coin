@@ -16,6 +16,8 @@ export const fetchPosts = () => {
   return API.get('/posts');
 };
 
+export const getUserPosts = (id) => API.post(`/posts/${id}`);
+
 export const createPost = (post) => API.post('/posts', post);
 
 export const updatePost = (id, updatedPost) =>
@@ -28,6 +30,8 @@ export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const signIn = (formData) => API.post('/user/signin', formData);
 
 export const signUp = (formData) => API.post('/user/signup', formData);
+
+// export const getUser = (id) => API.get(`/user/${id}`);
 
 export const getFriendRequests = (id) =>
   API.post(`/friendrequest/${id}/getfriendrequests`);

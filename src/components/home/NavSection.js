@@ -6,7 +6,7 @@ import Avatar from '../../assets/images/man.png';
 import Home from '../../assets/icons/Home';
 import People from '../../assets/icons/People';
 import Profile from '../../assets/icons/Profile';
-import Photos from '../../assets/icons/Rewards';
+import Rewards from '../../assets/icons/Rewards';
 
 import '../../common/home/nav-section.scss';
 
@@ -16,10 +16,32 @@ const NavSection = () => {
   const [isLinkActive, setLinkActive] = useState(history.location.pathname);
 
   const navLinks = [
-    { name: 'Home', to: '/', icon: <Home /> },
-    { name: 'People', to: '/people', icon: <People /> },
-    { name: 'Rewards', to: '/rewards', icon: <Photos /> },
-    { name: 'Profile', to: '/profile', icon: <Profile /> },
+    {
+      name: 'Home',
+      to: '/',
+      icon: <Home color={isLinkActive === '/' ? '#000000' : '#FFFFFF'} />,
+    },
+    {
+      name: 'People',
+      to: '/people',
+      icon: (
+        <People color={isLinkActive === '/people' ? '#000000' : '#FFFFFF'} />
+      ),
+    },
+    {
+      name: 'Rewards',
+      to: '/rewards',
+      icon: (
+        <Rewards color={isLinkActive === '/rewards' ? '#000000' : '#FFFFFF'} />
+      ),
+    },
+    {
+      name: 'Profile',
+      to: '/profile',
+      icon: (
+        <Profile color={isLinkActive === '/profile' ? '#000000' : '#FFFFFF'} />
+      ),
+    },
   ];
 
   return (

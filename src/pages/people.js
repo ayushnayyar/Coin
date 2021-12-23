@@ -1,7 +1,13 @@
 import React from 'react';
+import SectionHeading from '../components/SectionHeading';
 
 const People = () => {
-  return <div style={{ color: '#ffffff' }}>No People Added.</div>;
+  return (
+    <div className="People">
+      <SectionHeading heading="Following"></SectionHeading>
+      <People />
+    </div>
+  );
 };
 
 export default People;
