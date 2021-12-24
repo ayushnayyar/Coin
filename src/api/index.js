@@ -2,6 +2,12 @@ import axios from 'axios';
 
 const API = axios.create({ baseURL: process.env.REACT_APP_BACKEND_URL });
 
+API.defaults.headers = {
+  'Cache-Control': 'no-cache',
+  Pragma: 'no-cache',
+  Expires: '0',
+};
+
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
     req.headers.authorization = `Bearer ${
@@ -44,3 +50,7 @@ export const acceptFriendRequest = (id, friendId) =>
 
 export const declineFriendRequest = (id, friendId) =>
   API.patch(`/friendrequest/${id}/declinefriendrequest`, friendId);
+
+export const getFollowing = (id) => API.post(`/people/${id}/getfollowing`);
+
+export const getFollowers = (id) => API.post(`/people/${id}/getfollowers`);

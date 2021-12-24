@@ -1,17 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import Post from '../../components/home/Post';
 
 const Posts = () => {
-  const user = JSON.parse(localStorage.getItem('profile'));
-  console.log(user);
+  const posts = useSelector((state) => state.userPosts);
+  console.log(posts);
 
   return (
     <div className="ProfileSection__Posts">
-      {user?.result.posts.map((post) => {
-        console.log(post);
-        return <Post key={post._id} post={post} />;
-      })}
+      {posts.userPosts.length > 0 ? (
+        posts.userPosts.map((userPost) => {
+          return <Post key={userPost._id} post={userPost} />;
+        })
+      ) : (
+        <React.Fragment></React.Fragment>
+      )}
     </div>
   );
 };
