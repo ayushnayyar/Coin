@@ -5,6 +5,7 @@ import auth from './auth';
 import requests from './requests';
 import people from './people';
 import userPosts from './userPosts';
+import rewards from './rewards';
 
 export default combineReducers({
   posts,
@@ -12,4 +13,5 @@ export default combineReducers({
   requests,
   people,
   userPosts,
+  rewards,
 });

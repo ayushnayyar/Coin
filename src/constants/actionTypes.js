@@ -15,3 +15,5 @@ export const FETCH_FOLLOWING = 'FETCH_FOLLOWING';
 export const FETCH_FOLLOWERS = 'FETCH_FOLLOWERS';
 
 export const GET_USER_POSTS = 'GET_USER_POSTS';
+
+export const GET_REWARDS = 'GET_REWARDS';

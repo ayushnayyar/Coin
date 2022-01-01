@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import SectionHeading from '../components/SectionHeading';
 import PeopleCard from '../components/people/PeopleCard';
 import { getFollowing } from '../actions/people';
+import '../common/people/people.scss';
 
 const People = () => {
   const followingUsers = useSelector((state) => state.people.following);

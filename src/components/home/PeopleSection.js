@@ -30,6 +30,7 @@ const PeopleSection = () => {
         <div className="PeopleSection__Request">
           {requests.length > 0 ? (
             requests.map((friendRequest) => {
+              console.log(friendRequest);
               return (
                 <FollowRequest
                   key={friendRequest.id}

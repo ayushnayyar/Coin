@@ -43,14 +43,18 @@ export const getFriendRequests = (id) =>
   API.post(`/friendrequest/${id}/getfriendrequests`);
 
 export const sendFriendRequest = (id, friendId) =>
-  API.patch(`/friendrequest/${id}/sendfriendrequest`, friendId);
+  API.patch(`/friendrequest/${id}/sendfriendrequest`, { friendId: friendId });
 
 export const acceptFriendRequest = (id, friendId) =>
-  API.patch(`/friendrequest/${id}/acceptfriendrequest`, friendId);
+  API.patch(`/friendrequest/${id}/acceptfriendrequest`, { friendId: friendId });
 
 export const declineFriendRequest = (id, friendId) =>
-  API.patch(`/friendrequest/${id}/declinefriendrequest`, friendId);
+  API.patch(`/friendrequest/${id}/declinefriendrequest`, {
+    friendId: friendId,
+  });
 
 export const getFollowing = (id) => API.post(`/people/${id}/getfollowing`);
 
 export const getFollowers = (id) => API.post(`/people/${id}/getfollowers`);
+
+export const getRewards = (id) => API.get(`/rewards/${id}`);
