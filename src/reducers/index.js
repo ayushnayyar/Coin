@@ -7,7 +7,7 @@ import people from './people';
 import userPosts from './userPosts';
 import rewards from './rewards';
 
-export default combineReducers({
+export const appReducer = combineReducers({
   posts,
   auth,
   requests,
@@ -15,3 +15,11 @@ export default combineReducers({
   userPosts,
   rewards,
 });
+
+export const rootReducer = (state, action) => {
+  if (action.type === 'RESET') {
+    return appReducer(undefined, action);
+  }
+
+  return appReducer(state, action);
+};

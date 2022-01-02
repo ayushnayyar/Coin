@@ -4,13 +4,12 @@ import { useSelector } from 'react-redux';
 import Post from '../../components/home/Post';
 
 const Posts = () => {
-  const posts = useSelector((state) => state.userPosts);
-  console.log(posts);
+  const userPosts = useSelector((state) => state.userPosts);
 
   return (
     <div className="ProfileSection__Posts">
-      {posts.userPosts.length > 0 ? (
-        posts.userPosts.map((userPost) => {
+      {userPosts?.length > 0 ? (
+        userPosts.map((userPost) => {
           return <Post key={userPost._id} post={userPost} />;
         })
       ) : (

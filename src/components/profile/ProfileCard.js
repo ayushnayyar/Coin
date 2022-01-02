@@ -6,7 +6,7 @@ import Avatar from '../../assets/images/man.png';
 import '../../common/profile/profile-card.scss';
 
 const ProfileCard = () => {
-  const posts = useSelector((state) => state.posts);
+  const userPosts = useSelector((state) => state.userPosts);
   const user = JSON.parse(localStorage.getItem('profile'));
 
   return (
@@ -29,7 +29,7 @@ const ProfileCard = () => {
               Posts
             </div>
             <div className="ProfileSection__ProfileCard-posts-count">
-              {posts.length}
+              {userPosts?.length > 0 ? userPosts.length : 0}
             </div>
           </div>
           <div className="ProfileSection__ProfileCard-followers">
@@ -38,6 +38,14 @@ const ProfileCard = () => {
             </div>
             <div className="ProfileSection__ProfileCard-followers-count">
               {user?.result.friends.length}
+            </div>
+          </div>
+          <div className="ProfileSection__ProfileCard-following">
+            <div className="ProfileSection__ProfileCard-following-heading">
+              Following
+            </div>
+            <div className="ProfileSection__ProfileCard-following-count">
+              {user?.result.following.length}
             </div>
           </div>
         </div>

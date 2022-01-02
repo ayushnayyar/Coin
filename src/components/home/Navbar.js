@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import decode from 'jwt-decode';
 
 import '../../common/home/navbar.scss';
-import { LOGOUT } from '../../constants/actionTypes';
+import { LOGOUT, RESET } from '../../constants/actionTypes';
 import Avatar from '../../assets/images/man.png';
 import Plus from '../../assets/icons/Plus.js';
 import Menu from './Menu';
@@ -22,6 +22,7 @@ const Navbar = () => {
 
   const logout = () => {
     dispatch({ type: LOGOUT });
+    dispatch({ type: RESET });
 
     history.push('/login');
 

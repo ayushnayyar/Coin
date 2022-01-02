@@ -15,6 +15,7 @@ import Bin from '../../assets/icons/Bin';
 import '../../common/home/post.scss';
 
 const Post = ({ post }) => {
+  console.log(post);
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -60,9 +61,13 @@ const Post = ({ post }) => {
           </div>
         </div>
         <div className="Feed__Post__Right">
-          <div onClick={deleteCurrentPost} className="Feed__Post__Delete">
-            <Bin />
-          </div>
+          {user?.result._id === post.creator ? (
+            <div onClick={deleteCurrentPost} className="Feed__Post__Delete">
+              <Bin />
+            </div>
+          ) : (
+            <React.Fragment />
+          )}
         </div>
       </div>
       <div className="Feed__Post__Text">{post.description}</div>

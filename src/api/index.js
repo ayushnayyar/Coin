@@ -53,6 +53,11 @@ export const declineFriendRequest = (id, friendId) =>
     friendId: friendId,
   });
 
+export const removeUserFromFollowing = (id, removeUserId) =>
+  API.patch(`/friendrequest/${id}/removeuserfromfollowing`, {
+    removeUserId: removeUserId,
+  });
+
 export const getFollowing = (id) => API.post(`/people/${id}/getfollowing`);
 
 export const getFollowers = (id) => API.post(`/people/${id}/getfollowers`);

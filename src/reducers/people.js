@@ -1,4 +1,8 @@
-import { FETCH_FOLLOWERS, FETCH_FOLLOWING } from '../constants/actionTypes';
+import {
+  FETCH_FOLLOWERS,
+  FETCH_FOLLOWING,
+  REMOVE_USER_FROM_FOLLOWING,
+} from '../constants/actionTypes';
 
 const INITIAL_DATA = {
   following: [],
@@ -12,6 +16,9 @@ export default (state = INITIAL_DATA, action) => {
 
     case FETCH_FOLLOWERS:
       return { ...state, followers: action.payload };
+
+    case REMOVE_USER_FROM_FOLLOWING:
+      return { ...state, following: action.payload };
 
     default:
       return state;

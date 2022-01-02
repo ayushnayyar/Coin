@@ -4,6 +4,7 @@ import {
   UPDATE,
   DELETE,
   LIKE,
+  RESET,
 } from '../constants/actionTypes';
 
 export default (posts = [], action) => {
@@ -24,6 +25,9 @@ export default (posts = [], action) => {
       return posts.filter((post) => {
         return post._id !== action.payload;
       });
+
+    case RESET:
+      return [];
 
     default:
       return posts;

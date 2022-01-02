@@ -20,9 +20,16 @@ const People = () => {
   return (
     <div className="People">
       <SectionHeading heading="Following"></SectionHeading>
-      {followingUsers.map((followingUser) => {
-        return <PeopleCard key={followingUser._id} user={followingUser} />;
-      })}
+      {followingUsers.length > 0 ? (
+        followingUsers.map((followingUser) => {
+          console.log(followingUser);
+          return (
+            <PeopleCard key={followingUser._id} followingUser={followingUser} />
+          );
+        })
+      ) : (
+        <React.Fragment />
+      )}
     </div>
   );
 };

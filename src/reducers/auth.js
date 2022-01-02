@@ -1,4 +1,9 @@
-import { SEND_FRIEND_REQUEST, AUTH, LOGOUT } from '../constants/actionTypes';
+import {
+  SEND_FRIEND_REQUEST,
+  AUTH,
+  LOGOUT,
+  RESET,
+} from '../constants/actionTypes';
 
 const INITIAL_STATE = {
   authData: null,
@@ -12,6 +17,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return { ...state, authData: action?.data };
 
     case LOGOUT:
+    case RESET:
       localStorage.clear();
       return { ...state, authData: null };
 

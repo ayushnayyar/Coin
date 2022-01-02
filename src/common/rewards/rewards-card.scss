@@ -46,7 +46,8 @@
 
 .RewardsCard__Stats__Posts,
 .RewardsCard__Stats__Likes,
-.RewardsCard__Stats__AverageLikes {
+.RewardsCard__Stats__AverageLikes,
+.RewardsCard__Stats__Followers {
   margin-right: 16px;
   margin-top: 16px;
   display: flex;
@@ -57,7 +58,8 @@
 
 .RewardsCard__Stats__Posts-heading,
 .RewardsCard__Stats__Likes-heading,
-.RewardsCard__Stats__AverageLikes-heading {
+.RewardsCard__Stats__AverageLikes-heading,
+.RewardsCard__Stats__Followers-heading {
   margin-bottom: 8px;
   color: $secondary-text;
   font-size: 1rem;
@@ -65,7 +67,8 @@
 
 .RewardsCard__Stats__Posts-count,
 .RewardsCard__Stats__Likes-count,
-.RewardsCard__Stats__AverageLikes-count {
+.RewardsCard__Stats__AverageLikes-count,
+.RewardsCard__Stats__Followers-count {
   margin-bottom: 8px;
   font-size: 1.25rem;
   font-weight: 500;

@@ -37,6 +37,12 @@ const RewardsCard = () => {
             {user?.result.likeCount > 0 ? user.result.likeCount : 0}
           </div>
         </div>
+        <div className="RewardsCard__Stats__Followers">
+          <div className="RewardsCard__Stats__Followers-heading">Followers</div>
+          <div className="RewardsCard__Stats__Followers-count">
+            {user?.result.friends.length}
+          </div>
+        </div>
         <div className="RewardsCard__Stats__AverageLikes">
           <div className="RewardsCard__Stats__AverageLikes-heading">
             Average Likes
