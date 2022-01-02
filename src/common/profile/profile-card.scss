@@ -65,12 +65,24 @@
 }
 
 .ProfileSection__ProfileCard-posts-heading,
-.ProfileSection__ProfileCard-followers-heading {
+.ProfileSection__ProfileCard-followers-heading,
+.ProfileSection__ProfileCard-following-heading {
   margin-bottom: 8px;
   font-weight: 600;
+  color: $secondary-text;
 }
 
 .ProfileSection__ProfileCard-followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+.ProfileSection__ProfileCard-following {
   display: flex;
   flex-direction: column;
   justify-content: center;

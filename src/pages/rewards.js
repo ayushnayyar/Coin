@@ -1,7 +1,13 @@
 import React from 'react';
 
+import RewardsCard from '../components/rewards/RewardsCard';
+
 const Rewards = () => {
-  return <div style={{ color: '#ffffff' }}>Coming soon</div>;
+  return (
+    <div className="Rewards">
+      <RewardsCard />
+    </div>
+  );
 };
 
 export default Rewards;

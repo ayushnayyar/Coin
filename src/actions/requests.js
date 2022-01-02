@@ -30,6 +30,7 @@ export const acceptFriendRequest = (id, friendId) => async (dispatch) => {
   try {
     const { data } = await api.acceptFriendRequest(id, friendId);
     const request = { name: data.name, id: friendId };
+
     dispatch({ type: ACCEPT_FRIEND_REQUEST, payload: request });
   } catch (error) {
     console.log(error.message);

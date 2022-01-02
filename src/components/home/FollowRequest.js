@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
-import '../../common/home/follow-request.scss';
 import {
   acceptFriendRequest,
   declineFriendRequest,
-} from '../../actions/requests';
+} from '../../actions/requests.js';
+import '../../common/home/follow-request.scss';
 
 const FollowRequest = ({ name, profilePicture, id, friendId }) => {
   const dispatch = useDispatch();
 
   const acceptRequest = () => {
+    console.log(friendId);
     dispatch(acceptFriendRequest(id, friendId));
   };
 
