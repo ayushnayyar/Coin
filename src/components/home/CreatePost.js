@@ -69,6 +69,7 @@ const CreatePost = () => {
           </div>
           <div className="Create__Post__TextField">
             <textarea
+              className="Create__Post__TextArea"
               onChange={(text) => {
                 setPostData({ ...postData, description: text.target.value });
                 // setPostText(text.target.value);

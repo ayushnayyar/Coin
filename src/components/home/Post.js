@@ -72,11 +72,15 @@ const Post = ({ post }) => {
         </div>
       </div>
       <div className="Feed__Post__Text">{post.description}</div>
-      <div className="Feed__Post__Photos">
-        <div className="Feed__Post__Photo">
-          <img src={post.selectedFile} />
+      {post.selectedFile ? (
+        <div className="Feed__Post__Photos">
+          <div className="Feed__Post__Photo">
+            <img src={post.selectedFile} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <React.Fragment />
+      )}
       <div className="Feed__Post__Reactions">
         <div
           onClick={() => dispatch(likePost(post._id))}

@@ -11,6 +11,11 @@
   background-color: $light-gray;
 }
 
+.Create__Post__TextArea {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
 .Create__Post__Logo {
   width: 2.5rem;
   height: 2.5rem;
