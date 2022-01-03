@@ -13,9 +13,9 @@ import Share from '../../assets/icons/Share';
 import Bin from '../../assets/icons/Bin';
 
 import '../../common/home/post.scss';
+import { deleteUserPost } from '../../actions/userPosts';
 
 const Post = ({ post }) => {
-  console.log(post);
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -46,6 +46,7 @@ const Post = ({ post }) => {
 
   const deleteCurrentPost = () => {
     dispatch(deletePost(post._id));
+    dispatch(deleteUserPost(post._id));
   };
 
   return (
