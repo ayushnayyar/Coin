@@ -25,12 +25,15 @@
 .Create__Post__Form {
   flex-grow: 3;
   display: flex;
+  flex-direction: column;
 
-  > .Create__Post__TextField {
-    flex-grow: 3;
+  .Create__Post__TextField {
+    flex: 1;
     margin-right: 8px;
 
     > textarea {
+      justify-content: stretch;
+      align-items: stretch;
       font-family: $font-family;
       resize: none;
       overflow: hidden;
@@ -46,7 +49,7 @@
     }
   }
 
-  > .Create__Post__Button {
+  .Create__Post__Button {
     > button {
       display: flex;
       justify-content: center;
@@ -69,4 +72,21 @@
       }
     }
   }
+}
+
+.Create__Post__PrimaryRow {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.Create__Post__SecondaryRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Create__Post__FileImage {
+  flex: 1;
+  color: $primary-text;
 }

@@ -12,6 +12,7 @@ import '../../common/home/nav-section.scss';
 
 const NavSection = () => {
   let history = useHistory();
+  const user = JSON.parse(localStorage.getItem('profile'));
   // let location = useLocation();
   const [isLinkActive, setLinkActive] = useState(history.location.pathname);
 
@@ -51,7 +52,9 @@ const NavSection = () => {
           <img src={Avatar} />
         </div>
         <div className="NavSection__ProfileCard-info">
-          <div className="NavSection__ProfileCard-info-name">Ayush Nayyar</div>
+          <div className="NavSection__ProfileCard-info-name">
+            {user?.result.name}
+          </div>
           {/* <div className="NavSection__ProfileCard-info-username">
             @ayushnayyar
           </div> */}

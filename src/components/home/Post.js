@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../actions/posts';
 
 import Avatar from '../../assets/images/man.png';
-import Laptop from '../../assets/images/laptop.jpg';
+// import Laptop from '../../assets/images/laptop.jpg';
 import Like from '../../assets/icons/Like';
 import Comment from '../../assets/icons/Comment';
 import Share from '../../assets/icons/Share';
@@ -73,7 +73,7 @@ const Post = ({ post }) => {
       <div className="Feed__Post__Text">{post.description}</div>
       <div className="Feed__Post__Photos">
         <div className="Feed__Post__Photo">
-          <img src={Laptop} />
+          <img src={post.selectedFile} />
         </div>
       </div>
       <div className="Feed__Post__Reactions">
