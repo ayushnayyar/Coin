@@ -52,9 +52,9 @@ const NavSection = () => {
         </div>
         <div className="NavSection__ProfileCard-info">
           <div className="NavSection__ProfileCard-info-name">Ayush Nayyar</div>
-          <div className="NavSection__ProfileCard-info-username">
+          {/* <div className="NavSection__ProfileCard-info-username">
             @ayushnayyar
-          </div>
+          </div> */}
         </div>
       </div>
 
