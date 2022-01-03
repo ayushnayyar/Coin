@@ -1,6 +1,6 @@
 const ROUTES = {
   HOME: '/',
-  LOGIN: '/login',
+  LOGIN: '/auth',
   PEOPLE: '/people',
   PROFILE: '/profile',
   REWARDS: '/rewards',

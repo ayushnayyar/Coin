@@ -6,16 +6,16 @@ import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from '../../actions/posts';
 
 import Avatar from '../../assets/images/man.png';
-import Laptop from '../../assets/images/laptop.jpg';
+// import Laptop from '../../assets/images/laptop.jpg';
 import Like from '../../assets/icons/Like';
 import Comment from '../../assets/icons/Comment';
 import Share from '../../assets/icons/Share';
 import Bin from '../../assets/icons/Bin';
 
 import '../../common/home/post.scss';
+import { deleteUserPost } from '../../actions/userPosts';
 
 const Post = ({ post }) => {
-  console.log(post);
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -46,6 +46,7 @@ const Post = ({ post }) => {
 
   const deleteCurrentPost = () => {
     dispatch(deletePost(post._id));
+    dispatch(deleteUserPost(post._id));
   };
 
   return (
@@ -71,11 +72,15 @@ const Post = ({ post }) => {
         </div>
       </div>
       <div className="Feed__Post__Text">{post.description}</div>
-      <div className="Feed__Post__Photos">
-        <div className="Feed__Post__Photo">
-          <img src={Laptop} />
+      {post.selectedFile ? (
+        <div className="Feed__Post__Photos">
+          <div className="Feed__Post__Photo">
+            <img src={post.selectedFile} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <React.Fragment />
+      )}
       <div className="Feed__Post__Reactions">
         <div
           onClick={() => dispatch(likePost(post._id))}

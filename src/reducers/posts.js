@@ -22,9 +22,7 @@ export default (posts = [], action) => {
       );
 
     case DELETE:
-      return posts.filter((post) => {
-        return post._id !== action.payload;
-      });
+      return posts.filter((post) => post._id !== action.payload);
 
     case RESET:
       return [];

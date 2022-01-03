@@ -6,15 +6,16 @@
   justify-content: stretch;
   align-items: stretch;
   color: $primary-text;
+  overflow-y: hidden;
 }
 
 .Login__ImageSection {
-  flex: 1.75;
+  width: 60%;
   min-height: 100%;
 }
 
 .Login__DetailsSection {
-  flex: 1.25;
+  width: 40%;
   min-height: 100%;
   align-items: center;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import GoogleLogin from 'react-google-login';
 import { useDispatch } from 'react-redux';
@@ -78,7 +79,7 @@ const DetailsSection = () => {
           {login ? 'Sign in.' : 'Register.'}
         </div>
       </div>
-      <div className="Details__Section__Google">
+      {/* <div className="Details__Section__Google">
         <GoogleLogin
           clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           buttonText="Log in with Google"
@@ -89,7 +90,7 @@ const DetailsSection = () => {
       </div>
       <div className="Details__Section__Seperator">
         <div /> &nbsp; or &nbsp; <div />
-      </div>
+      </div> */}
       <div className="Details__Section__FormSection">
         <form
           className="Details__Section__Form"
@@ -157,7 +158,7 @@ const DetailsSection = () => {
                   type="checkbox"
                 />
                 <label>
-                  I agree to Coin&apos;s Terms of Service and Privacy Policy
+                  I agree to Spectrum&apos;s Terms of Service and Privacy Policy
                 </label>
               </div>
             </React.Fragment>
