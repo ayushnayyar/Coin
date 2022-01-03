@@ -5,6 +5,7 @@ import decode from 'jwt-decode';
 
 import '../../common/home/navbar.scss';
 import { LOGOUT, RESET } from '../../constants/actionTypes';
+import Routes from '../../constants/routes';
 import Avatar from '../../assets/images/man.png';
 import Plus from '../../assets/icons/Plus.js';
 import Menu from './Menu';
@@ -15,6 +16,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
+  const { LOGIN } = Routes;
 
   const toggleClass = () => {
     setActive(!isActive);
@@ -24,7 +26,7 @@ const Navbar = () => {
     dispatch({ type: LOGOUT });
     dispatch({ type: RESET });
 
-    history.push('/login');
+    history.push(LOGIN);
 
     localStorage.clear();
   };
@@ -56,7 +58,7 @@ const Navbar = () => {
             onClick={() => history.push('/')}
             className="Navbar__Link Navbar-brand"
           >
-            Coin
+            Spectrum
           </div>
 
           {/* <div className="Navbar__Link">Test Link 1</div>
